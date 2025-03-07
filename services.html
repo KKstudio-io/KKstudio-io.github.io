@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KK STUDIO услуги</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Контейнер для частиц -->
+    <div id="particles-js"></div>
+
+    <header> 
+        <!-- Кнопка переключения тёмной темы -->
+        <button id="theme-toggle">◼️</button>
+
+        
+
+        <nav>
+            <ul>
+                <li><a href="index.html" id="nav-home">Главная</a></li>
+                <li><a href="about.html" id="nav-about">Контакты</a></li>
+                <li><a href="services.html" id="nav-services">Услуги</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Основной контент -->
+        <div class="content">
+            <h2 id="services-title">Наши услуги</h2>
+      <p id="about-services">
+    <strong>Наши услуги:</strong>
+    Мы предоставляем широкий спектр услуг, включая:
+    <ul>
+        <li>Программирование и разработка сайтов.</li>
+        <li>Создание уникальных Telegram-ботов под любые нужды.</li>
+        <li>Дизайн: логотипы, превью.</li>
+        <li>Разработка на языке программирования Lua для SA:MP.</li>
+        </div>
+    </div>
+
+    <!-- Подключаем JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Объект с переводами
+        const translations = {
+            ru: {
+                title: "KK STUDIO",
+                description: "Дизайн, Программирование, Модификации(SA:MP)",
+                designTitle: "Примеры дизайна:",
+                navHome: "Главная",
+                navAbout: "О нас",
+                navServices: "Услуги",
+                navContact: "Контакты",
+                servicesTitle: "Наши услуги",
+                servicesDescription: "Мы предоставляем широкий спектр услуг, включая программирование (сайты, боты), дизайн, разработку на Lua."
+            },
+            uk: {
+                title: "KK STUDIO",
+                description: "Дизайн, Програмування, Модифікації(SA:MP)",
+                designTitle: "Приклади дизайну:",
+                navHome: "Головна",
+                navAbout: "Про нас",
+                navServices: "Послуги",
+                navContact: "Контакти",
+                servicesTitle: "Наші послуги",
+                servicesDescription: "Ми надаємо широкий спектр послуг, включаючи програмування (сайти, боти), дизайн, розробку на Lua."
+            },
+            en: {
+                title: "KK STUDIO",
+                description: "Design, Programming, Modifications(SA:MP)",
+                designTitle: "Design Examples:",
+                navHome: "Home",
+                navAbout: "About Us",
+                navServices: "Services",
+                navContact: "Contact",
+                servicesTitle: "Our Services",
+                servicesDescription: "We provide a wide range of services, including programming (websites, bots), design, Lua development."
+            }
+        };
+
+        // Функция для смены языка
+        function changeLanguage(language) {
+            document.getElementById("title").innerText = translations[language].title;
+            document.getElementById("content-description").innerText = translations[language].description;
+            document.getElementById("design-title").innerText = translations[language].designTitle;
+            document.getElementById("nav-home").innerText = translations[language].navHome;
+            document.getElementById("nav-about").innerText = translations[language].navAbout;
+            document.getElementById("nav-services").innerText = translations[language].navServices;
+            document.getElementById("nav-contact").innerText = translations[language].navContact;
+            document.getElementById("services-title").innerText = translations[language].servicesTitle;
+            document.getElementById("services-description").innerText = translations[language].servicesDescription;
+        }
+
+        // Слушатель для выбора языка
+        document.getElementById("language-select").addEventListener("change", function() {
+            changeLanguage(this.value);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KK STUDIO главная</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Контейнер для частиц -->
+    <div id="particles-js"></div>
+
+    <header> 
+        <!-- Кнопка переключения тёмной темы -->
+        
+        <button id="theme-toggle">◼️</button>
+
+        
+
+        <nav>
+            <ul>
+                <li><a href="index.html" id="nav-home">Главная</a></li>
+                <li><a href="about.html" id="nav-about">Контакты</a></li>
+                <li><a href="services.html" id="nav-services">Услуги</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Основной контент -->
+        <div class="content">
+            <h2>О наc</h2>
+            <p><strong>KK STUDIO</strong> — команда профессионалов, специализирующихся на создании уникального дизайна и разработке решений для ваших проектов. Мы занимаемся:</p>
+            <ul>
+                <p><strong>Дизайном:</strong> Логотипы, превью, графика для вашего бренда.</p>
+                <p><strong>Программированием:</strong> Скрипты для GTA: SA Multiplayer, в частности для проекта Arizona Role Play.</p>
+                <p><strong>Telegram-ботами:</strong> Разработка кастомных ботов для различных нужд.</p>
+            </ul>
+            <p>Наша команда в <strong>KK STUDIO</strong> всегда готова воплотить ваши идеи в жизнь и помочь сделать ваш проект еще успешнее! Всегда рады сотрудничеству!</p>
+        </div>
+    </div>
+    <h2 id="design-title">Примеры дизайна:</h2>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="imone.png" alt="Image 1">
+            </div>
+            <div class="slide">
+                <img src="imtr.png" alt="Image 2">
+            </div>
+            <div class="slide">
+                <img src="imto.png" alt="Image 3">
+            </div>
+            <div class="slide">
+                <img src="imgg.png" alt="Image 4">
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключаем JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Объект с переводами
+        const translations = {
+            ru: {
+                title: "KK STUDIO",
+                description: "Дизайн, Программирование, Модификации(SA:MP)",
+                designTitle: "Примеры дизайна:",
+                navHome: "Главная",
+                navAbout: "О нас",
+                navServices: "Услуги",
+                navContact: "Контакты"
+            },
+            uk: {
+                title: "KK STUDIO",
+                description: "Дизайн, Програмування, Модифікації(SA:MP)",
+                designTitle: "Приклади дизайну:",
+                navHome: "Головна",
+                navAbout: "Про нас",
+                navServices: "Послуги",
+                navContact: "Контакти"
+            },
+            en: {
+                title: "KK STUDIO",
+                description: "Design, Programming, Modifications(SA:MP)",
+                designTitle: "Design Examples:",
+                navHome: "Home",
+                navAbout: "About Us",
+                navServices: "Services",
+                navContact: "Contact"
+            }
+        };
+
+        // Функция для смены языка
+        function changeLanguage(language) {
+            document.getElementById("title").innerText = translations[language].title;
+            document.getElementById("content-description").innerText = translations[language].description;
+            document.getElementById("design-title").innerText = translations[language].designTitle;
+            document.getElementById("nav-home").innerText = translations[language].navHome;
+            document.getElementById("nav-about").innerText = translations[language].navAbout;
+            document.getElementById("nav-services").innerText = translations[language].navServices;
+            document.getElementById("nav-contact").innerText = translations[language].navContact;
+        }
+
+        // Слушатель для выбора языка
+        document.getElementById("language-select").addEventListener("change", function() {
+            changeLanguage(this.value);
+        });
+    </script>
+
+</body>
+</html>

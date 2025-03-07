@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KK STUDIO о нас</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Контейнер для частиц -->
+    <div id="particles-js"></div>
+
+    <header> 
+        <!-- Кнопка переключения тёмной темы -->
+        <button id="theme-toggle">◼️</button>
+
+        
+
+        <nav>
+            <ul>
+                <li><a href="index.html" id="nav-home">Главная</a></li>
+                <li><a href="about.html" id="nav-about">Контакты</a></li>
+                <li><a href="services.html" id="nav-services">Услуги</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Основной контент -->
+        <div class="content">
+            <p id="reviews-title">
+    <strong>Отзывы:</strong>
+    Мы всегда рады получать обратную связь от наших клиентов. Ваши мнения и предложения помогают нам совершенствоваться и становиться лучше. 
+    <a href="https://t.me/KKstudioreview" target="_blank">Посмотреть все отзывы</a> и узнать, что говорят наши клиенты о нашей работе.
+</p>
+
+<p id="telegram-channel">
+    <strong>Наш Telegram канал:</strong>
+    Мы активно делимся новыми проектами, интересными новостями и идеями в нашем <a href="https://t.me/SampPreview" target="_blank">Telegram канале</a>. Присоединяйтесь, чтобы не пропустить свежие обновления и эксклюзивные предложения.
+</p>
+
+<p id="developer">
+    <strong>Разработчик:</strong>
+    Если у вас есть вопросы, идеи или предложения, вы всегда можете связаться с нами. <a href="https://t.me/Farmloveis" target="_blank">Написать разработчику</a>, и мы с радостью обсудим ваш проект или ответим на все вопросы.
+</p>
+
+        </div>
+    </div>
+
+    <!-- Подключаем JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Объект с переводами
+        const translations = {
+            ru: {
+                title: "KK STUDIO",
+                description: "Дизайн, Программирование, Модификации(SA:MP)",
+                designTitle: "Примеры дизайна:",
+                navHome: "Главная",
+                navAbout: "О нас",
+                navServices: "Услуги",
+                navContact: "Контакты",
+                aboutTitle: "О нас",
+                reviewsTitle: "Отзывы: ",
+                telegramChannel: "Telegram канал: ",
+                developer: "Разработчик: "
+            },
+            uk: {
+                title: "KK STUDIO",
+                description: "Дизайн, Програмування, Модифікації(SA:MP)",
+                designTitle: "Приклади дизайну:",
+                navHome: "Головна",
+                navAbout: "Про нас",
+                navServices: "Послуги",
+                navContact: "Контакти",
+                aboutTitle: "Про нас",
+                reviewsTitle: "Відгуки: ",
+                telegramChannel: "Telegram канал: ",
+                developer: "Розробник: "
+            },
+            en: {
+                title: "KK STUDIO",
+                description: "Design, Programming, Modifications(SA:MP)",
+                designTitle: "Design Examples:",
+                navHome: "Home",
+                navAbout: "About Us",
+                navServices: "Services",
+                navContact: "Contact",
+                aboutTitle: "About Us",
+                reviewsTitle: "Reviews: ",
+                telegramChannel: "Telegram Channel: ",
+                developer: "Developer: "
+            }
+        };
+
+        // Функция для смены языка
+        function changeLanguage(language) {
+            document.getElementById("title").innerText = translations[language].title;
+            document.getElementById("content-description").innerText = translations[language].description;
+            document.getElementById("design-title").innerText = translations[language].designTitle;
+            document.getElementById("nav-home").innerText = translations[language].navHome;
+            document.getElementById("nav-about").innerText = translations[language].navAbout;
+            document.getElementById("nav-services").innerText = translations[language].navServices;
+            document.getElementById("nav-contact").innerText = translations[language].navContact;
+            document.getElementById("about-title").innerText = translations[language].aboutTitle;
+            document.getElementById("reviews-title").innerText = translations[language].reviewsTitle;
+            document.getElementById("telegram-channel").innerText = translations[language].telegramChannel;
+            document.getElementById("developer").innerText = translations[language].developer;
+        }
+
+        // Слушатель для выбора языка
+        document.getElementById("language-select").addEventListener("change", function() {
+            changeLanguage(this.value);
+        });
+    </script>
+
+</body>
+</html>
